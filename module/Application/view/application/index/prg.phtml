@@ -1,0 +1,15 @@
+<h1>Form submit using Post / Redirect / Get Controller plugin</h1>
+<h2>Write anything less than 6 characters in the form, you get back the <strong>empty</strong> form, <strong>no validation errors</strong></h2>
+<?php
+$form->prepare();
+$form->setAttribute('action',$this->url('application/prg'));
+?>
+
+<?php echo $this->form()->openTag($form) ?>
+<dl class="zend_form">
+    <dt><?php echo $this->formLabel($form->get('demonstrate')) ?></dt>
+    <dd><?php echo $this->formInput($form->get('demonstrate')) ?></dd>
+    <dd><?php echo $this->formElementErrors($form->get('demonstrate')) ?></dd>
+    <dd><?php echo $this->formElement($form->get('submit')); ?></dd>
+</dl>
+<?php echo $this->form()->closeTag() ?>
